@@ -1,12 +1,19 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: myapp
+  name: nginxux
 spec:
-  containers:
-    - name: myapp
-      image:gcr.io/qwiklabs-gcp-02-dadca81af084/vitcuk:latest
-      ports:
-        - containerPort: 8080
-    - name: envoy
-      image: gcr.io/qwiklabs-gcp-02-dadca81af084/vitcuk:latest
+  replicas: 100
+  selector:
+    matchLabels:
+      app: nginxux
+  template:
+    metadata:
+      labels:
+        app: nginxux
+    spec:
+      containers:
+        - name: nginxux
+          image: gcr.io/qwiklabs-gcp-02-dadca81af084/vitcuk:latest
+          ports:
+            - containerPort: 80
