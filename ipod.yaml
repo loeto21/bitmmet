@@ -1,21 +1,20 @@
 ---
 apiVersion: apps/v1
-kind: pod
+kind: Deployment
 metadata:
-  name: myapp
+  name: nginxux
 spec:
-  replicas: 30
+  replicas: 10
   selector:
     matchLabels:
-      app: myapp
+      app: nginxux
   template:
     metadata:
       labels:
-        app: myapp
+        app: nginxux
     spec:
       containers:
-        - name: myapp
-          image: 744828937973.dkr.ecr.us-east-1.amazonaws.com/tensure:latest
+        - name: nginxux
+          image: nginx:1.14.2
           ports:
-            - containerPort: 8080
-
+            - containerPort: 80
