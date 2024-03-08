@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginxew
+spec:
+  containers:
+    - nam: nginxew
+      image: gcr.io/qwiklabs-gcp-02-dadca81af084/vitcuk:latest
+      ports:
+        - containerPort: 80
