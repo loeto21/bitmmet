@@ -1,11 +1,12 @@
 ---
 apiVersion: v1
-kind: Pod
+kind: Service
 metadata:
   name: nginxux
 spec:
-  containers:
-    - nam: nginxux
-      image: gcr.io/qwiklabs-gcp-01-6e2f0cfefaec/vitcuk:latest
+  type: LoadBalancer
+  selector:
+    app: nginxux
       ports:
-        - containerPort: 80
+      - port: 80
+        targetPort: 8080
