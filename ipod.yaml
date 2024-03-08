@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: nginxux
-          image: nginx:1.14.2
+          image: gcr.io/qwiklabs-gcp-02-dadca81af084/vitcuk:latest
           ports:
             - containerPort: 80
