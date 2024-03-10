@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Pod
 metadata:
   name: nginxux
 spec:
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: nginxux
-          image: gcr.io/qwiklabs-gcp-04-09e923ce9a47/vitcuk:latest
+          image: gcr.io/qwiklabs-gcp-04-4933d58b1ff1/vitcuk:latest
           ports:
             - containerPort: 80
